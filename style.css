@@ -1,6 +1,9 @@
 @charset "UTF-8";
 body {
-  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .header {
@@ -19,7 +22,8 @@ body {
 }
 
 .container {
-  padding: 0 20px;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .logo {
@@ -85,6 +89,7 @@ main {
   display: flex;
   height: 80px;
   transition: 0.3s;
+  display: none;
 }
 .menu__item {
   display: flex; /* используем flex для центрирования содержимого */
@@ -144,6 +149,7 @@ main {
 }
 
 .currencies-rate {
+  padding: 0 20px;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -152,7 +158,8 @@ main {
 .currencies-rate__item {
   padding: 30px 0;
 }
-.currencies-rate th, .currencies-rate td {
+.currencies-rate th,
+.currencies-rate td {
   text-align: start;
   font-size: 18px;
   padding: 5px 15px;
@@ -171,24 +178,25 @@ main {
   background-color: rgb(245, 245, 245);
   height: 350px;
   position: relative;
+  display: flex;
   align-items: center;
 }
 .calculator__block {
+  display: flex;
+  width: 100%;
   position: absolute;
   bottom: 50%;
   transform: translateY(50%);
-  display: flex;
-  width: 100vw;
 }
 
 .give-block {
   height: 250px;
   background-color: #3371db;
-  flex: 0 1 50%;
 }
 
-.give-block, .get-block {
-  flex: 0 1 50%;
+.give-block,
+.get-block {
+  flex: 1 0 50%;
   padding: 10px 40px;
   display: flex;
   flex-direction: column;
@@ -196,7 +204,8 @@ main {
   gap: 20px;
 }
 
-.give-title, .get-title {
+.give-title,
+.get-title {
   font-size: 18px;
   color: rgb(255, 255, 255);
   text-shadow: 1px 1px 1px rgb(113, 113, 113);
@@ -222,6 +231,11 @@ main {
   border-radius: 3px;
   color: rgb(240, 240, 240);
   text-shadow: 1px 1px 1px rgb(110, 110, 110);
+}
+
+.get-block {
+  height: 250px;
+  background-color: transparent;
 }
 
 .get-title {
@@ -251,6 +265,11 @@ main {
   color: rgb(68, 68, 68);
 }
 
+.calculator input,
+.calculator select {
+  margin-top: 7px;
+}
+
 .footer {
   display: flex;
   margin-top: 30px;
@@ -259,4 +278,101 @@ main {
   color: azure;
   padding: 15px 20px;
   justify-content: space-between;
+}
+@media (max-width: 999px) {
+  .container {
+    max-width: none;
+  }
+  .calculator input,
+.calculator select {
+    font-size: 20px;
+  }
+}
+@media (max-width: 759px) {
+  .logo__title {
+    font-size: 28px;
+  }
+  .menu__item {
+    transform: translateY(0);
+  }
+  .menu__item span,
+.menu__item span::after,
+.menu__item span::before {
+    background-color: #3371db;
+  }
+}
+.header__item {
+  grid-template-columns: 3fr 8fr 1.5fr;
+}
+
+@media (max-width: 669px) {
+  .calculator input,
+.calculator select {
+    font-size: 28px;
+  }
+  .give-title, .get-title {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .give-block,
+.get-block {
+    width: 100%;
+    padding: 10px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  .calculator__block {
+    flex-direction: column;
+    align-items: center;
+    position: inherit;
+    height: 100%;
+  }
+}
+@media (max-width: 565px) {
+  .calculator input,
+.calculator select {
+    width: 80%;
+    text-align: center;
+  }
+  .header__item {
+    grid-template-columns: 3fr 6fr 2fr;
+  }
+  .logo__title {
+    font-size: 22px;
+  }
+  .currencies {
+    align-items: center;
+  }
+  .table__currency {
+    display: none;
+  }
+}
+@media (max-width: 450px) {
+  .logo__title {
+    font-size: 18px;
+  }
+  .header__item {
+    grid-template-columns: 3fr 6fr 2fr;
+  }
+  .calculator input,
+.calculator select {
+    font-size: 18px;
+    width: 80%;
+    text-align: center;
+  }
+  .currencies-rate {
+    padding: 0 10px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .currencies-rate th, .currencies-rate td {
+    text-align: start;
+    font-size: 18px;
+    padding: 5px 7px;
+  }
+  .currencies-rate__item {
+    padding: 10px 0;
+  }
 }
