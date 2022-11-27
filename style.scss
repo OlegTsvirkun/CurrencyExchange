@@ -5,6 +5,18 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; // Yeah, yeah everybody write about it
+}
+
+input[type="number"],
+input[type="number"]:hover,
+input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
 .header {
     height: 80px;
     overflow: hidden;
@@ -86,34 +98,40 @@ main {
     cursor: pointer;
     // overflow: hidden;
     position: relative;
+    &__helper {
+        position: sticky;
+        background-color: #fff374;
 
+        height: 80px;
+        position: fixed;
+        z-index: 12;
+        top: 0;
+    }
     &__list {
         position: absolute;
-        right: 100%; //!
+        // right: 100%; //!
         display: flex;
         align-items: center;
-        transform: translateX(50%);
+        // transform: translateX(50%);
         // background-color: #015aff;
-        display: flex;
+        transform: translateX(100%);
+        right: -100%;
         height: 80px;
         transition: 0.3s;
-        display: none;
+        // display: none;
+        z-index: 11;
     }
     &__item {
-        // position: absolute;
         display: flex; /* используем flex для центрирования содержимого */
         align-items: center; /* центрируем содержимое кнопки */
         justify-content: center;
-        // position: relative;
-        // top: 50%;
-        transform: translateY(250%);
-        // transform: translateY(50%) ;
 
-        // padding: 0 20px;
+        transform: translateY(0%);
+
         width: 35px;
         height: 26px;
         cursor: pointer;
-        z-index: 1;
+        z-index: 13;
         transition: all 0.3s;
     }
     &__title {
@@ -122,14 +140,15 @@ main {
         // display: none;
         transition: all 0.8s;
         // position: relative;
+        // transform: translateY(0);
     }
     &__item span,
     &__item span::before,
     &__item span::after {
         // display: block;
         // display: none;
-
         position: absolute;
+
         // bottom:-200%;
         width: 100%;
         height: 4px;
@@ -153,11 +172,32 @@ main {
         }
     }
 }
+.hide {
+    transform: translateY(250%);
+}
 
+.menu-open {
+    transform: translateX(0%);
+    right: 100%;
+}
+.menu-click {
+    span {
+        height: 0;
+        transform: rotate(45deg);
+    }
+    span::before,
+    span::after {
+        top: 0;
+    }
+    span::before {
+        transform: rotate(90deg);
+    }
+}
 .menu-list {
     &__item {
         padding: 0 20px;
         transition: all 0.3s;
+        cursor: pointer;
     }
     &__item:hover {
         color: hsl(207, 100%, 64%);
@@ -272,6 +312,9 @@ main {
         // font-weight: 300;
         color: rgb(240, 240, 240);
         text-shadow: 1px 1px 1px rgb(110, 110, 110);
+        option {
+            background-color: #3371db;
+        }
     }
 }
 .get-block {
@@ -306,6 +349,10 @@ main {
         border-radius: 3px;
         // font-weight: 300;
         color: rgb(68, 68, 68);
+        option {
+            background-color: rgb(245, 245, 245);
+            border-radius: 3px;
+        }
 
         // text-shadow: 1px 1px 1px rgb(110, 110, 110);
     }
@@ -355,7 +402,6 @@ main {
     }
 }
 .header__item {
-    
     grid-template-columns: 3fr 8fr 1.5fr;
 }
 @media (max-width: 669px) {
@@ -365,7 +411,8 @@ main {
             font-size: 28px;
         }
     }
-    .give-title, .get-title{
+    .give-title,
+    .get-title {
         text-align: center;
         text-transform: uppercase;
     }
@@ -390,13 +437,11 @@ main {
     .calculator {
         input,
         select {
-            
-            width:80%;
+            width: 80%;
             text-align: center;
         }
     }
     .header__item {
-       
         grid-template-columns: 3fr 6fr 2fr;
     }
     .logo__title {
@@ -407,35 +452,35 @@ main {
         // justify-content: space-between;
     }
     .currencies {
-        align-items:center;
+        align-items: center;
         // font-size: 18px;
     }
-    .table__currency{
+    .table__currency {
         display: none;
     }
 }
-@media(max-width:450px){
+@media (max-width: 450px) {
     .logo__title {
         font-size: 18px;
     }
     .header__item {
-       
         grid-template-columns: 3fr 6fr 2fr;
     }
     .calculator {
         input,
         select {
             font-size: 18px;
-            width:80%;
+            width: 80%;
             text-align: center;
         }
     }
     .currencies-rate {
         padding: 0 10px;
         margin-top: 10px;
-      text-align: center;
+        text-align: center;
     }
-    .currencies-rate th, .currencies-rate td {
+    .currencies-rate th,
+    .currencies-rate td {
         text-align: start;
         font-size: 18px;
         padding: 5px 7px;
@@ -444,4 +489,3 @@ main {
         padding: 10px 0;
     }
 }
-
