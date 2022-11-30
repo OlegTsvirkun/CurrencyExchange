@@ -1,0 +1,30 @@
+.logo {
+    position: relative;
+    &__title {
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        text-align: center;
+        // transform: translateY(60%);
+        transform: translate(-50%, -50%);
+        font-size: 35px;
+        text-transform: uppercase;
+        color: rgb(255, 255, 255);
+        text-shadow: 1px 1px 2px rgb(110, 110, 110);
+
+        // font-border: 1px solid black;
+    }
+    &__flag {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    &__blue {
+        height: 40px;
+        background-color: #3371db;
+    }
+    &__yellow {
+        height: 40px;
+        background-color: #fff374;
+    }
+}

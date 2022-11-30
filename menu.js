@@ -19,8 +19,6 @@ document.addEventListener('click', (e) => {
         menuList.classList.remove('menu-open');
         menuItem.classList.remove('menu-click');
         menuItem.classList.add('hide');
-
-
     };
 
 })
