@@ -1,8 +1,34 @@
 import React from 'react';
+import { RotatingLines } from 'react-loader-spinner';
+import { useSelector } from 'react-redux';
+import { TableBody } from '../TableBody';
 import styles from './CurrencyTable.module.scss';
 
-export const CurrencyTable = ({}) => (
-  <div className={styles.currenciesRate}>
+export const CurrencyTable = ({}) =>{ 
+
+const { currencies, isLoading } = useSelector((state) => state.currency);
+
+if(isLoading){
+<>
+    <RotatingLines
+    strokeColor="grey"
+    strokeWidth="5"
+    animationDuration="0.75"
+    width="96"
+    visible={true}
+  />
+</>
+}
+// const { USD, EUR, cross } = currencies.reduce((acc, item) => {
+//   if (item.currencyCodeB == "UAH") acc[item.currencyCodeA] = item;
+//   else acc['cross'] = item;
+//   return acc;
+// }, {});
+// console.log('cross',cross);
+else if(!isLoading){
+
+  return(
+   <div className={styles.currenciesRate}>
      <div className={styles.currenciesRate}>
                 <div className={styles.currenciesRate__title}>Currency rate</div>
                 <div className={styles.currenciesRate__description}>Get a full range of foreign exchange transactions and sales
@@ -18,8 +44,12 @@ export const CurrencyTable = ({}) => (
                           <th>Order</th>
                       </tr>
                    </thead>
-                    <tbody>
-                      <tr>
+                   <tbody>
+                   {currencies.map(currencies=><TableBody {...currencies}/>)
+                
+                   }
+                  
+                      {/* <tr>
                           <td className={styles.table__currency}>U.S. dollar</td>
                           <td>USD</td>
                           <td>40.1500</td>
@@ -46,10 +76,12 @@ export const CurrencyTable = ({}) => (
                           <td>42.1500</td>
                           <td>44.1500</td>
                           <td>yes</td>
-                      </tr>
+                      </tr> */}
                     </tbody>
                 </table>
             </div>
   </div>
-);
+)
+                    }
+};
 
