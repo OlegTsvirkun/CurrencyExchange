@@ -129,3 +129,17 @@
 .menu-hover {
     transform: translateY(0);
 }
+
+@media (max-width: 759px) {
+    .logo__title {
+        font-size: 28px;
+    }
+    .menu__item {
+        transform: translateY(0);
+    }
+    .menu__item span,
+    .menu__item span::after,
+    .menu__item span::before {
+        background-color: #3371db;
+    }
+}

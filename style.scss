@@ -400,9 +400,9 @@ main {
     .menu__item span::before {
         background-color: #3371db;
     }
-}
-.header__item {
-    grid-template-columns: 3fr 8fr 1.5fr;
+    .header__item {
+        grid-template-columns: 3fr 8fr 1.5fr;
+    }
 }
 @media (max-width: 669px) {
     .calculator {

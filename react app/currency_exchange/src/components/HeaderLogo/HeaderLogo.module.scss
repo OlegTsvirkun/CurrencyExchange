@@ -28,3 +28,18 @@
         background-color: #fff374;
     }
 }
+@media (max-width: 759px) {
+    .logo__title {
+        font-size: 28px;
+    }
+}
+@media (max-width: 565px) {
+    .logo__title {
+        font-size: 22px;
+    }
+}
+@media (max-width: 450px) {
+    .logo__title {
+        font-size: 18px;
+    }
+}

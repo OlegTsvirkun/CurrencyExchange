@@ -1,0 +1,59 @@
+.currenciesRate {
+    padding: 0 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__item {
+        padding: 30px 0;
+    }
+    th,
+    td {
+        text-align: start;
+        font-size: 18px;
+        padding: 5px 15px;
+    }
+    &__title {
+        // padding: 0 20px;
+        margin-bottom: 5px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    &__description {
+        // padding:0 20px;
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 999px) {
+    .container {
+        max-width: none;
+    }
+   
+}
+
+
+@media (max-width: 565px) {
+    
+    .table__currency {
+        display: none;
+    }
+}
+@media (max-width: 450px) {
+   
+    .currenciesRate {
+        padding: 0 10px;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .currenciesRate th,
+    .currenciesRate td {
+        text-align: start;
+        font-size: 18px;
+        padding: 5px 7px;
+    }
+    .currenciesRate__item {
+        padding: 10px 0;
+    }
+}
