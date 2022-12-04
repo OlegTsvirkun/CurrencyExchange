@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Calculator.module.scss";
 
 export const Calculator = ({}) => {
+
 	return (
 		
 			<div className ={styles.calculator}>
@@ -9,6 +10,7 @@ export const Calculator = ({}) => {
 					<div className ={styles.giveBlock}>
 						<div className ={styles.giveTitle}>You give</div>
 						<div className ={styles.give__inputs}>
+              
 							<input
 								className ={styles.give__value}
 								type="number"
