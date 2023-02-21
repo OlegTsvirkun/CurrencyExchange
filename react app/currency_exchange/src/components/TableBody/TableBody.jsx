@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './TableBody.module.scss';
 
 export const TableBody = ({currencyCodeA,currencyCodeB,rateBuy,rateSell}) =>{
-  console.log(currencyCodeA);
   return (
   
     <tr key = {currencyCodeA}>

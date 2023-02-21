@@ -45,7 +45,7 @@ else if(!isLoading){
                       </tr>
                    </thead>
                    <tbody>
-                   {currencies.map(currencies=><TableBody {...currencies}/>)
+                   {currencies.map(currencies=><TableBody key ={`${currencies.currencyCodeA}${currencies.rateBuy}  `}  {...currencies}/>)
                 
                    }
                   
