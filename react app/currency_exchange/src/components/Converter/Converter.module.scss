@@ -1,7 +1,6 @@
-.giveMoney{
+.Converter{
  
     height: 250px;
-    background-color: #3371db;
     // max-width:50%;
     // flex: 0 1 50%;
 }
@@ -16,6 +15,7 @@
 }
 .title{
     font-size: 18px;
+    text-transform:uppercase;
     color: rgb(255, 255, 255);
     text-shadow: 1px 1px 1px rgb(113, 113, 113);
 }

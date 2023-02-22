@@ -24,8 +24,17 @@
     transform: translateY(50%);
 
 }
+.blue{
+    background-color: #3371db;
+    
 
-
+}
+.active{
+    border: 1px solid rgba(128, 128, 128, 0.596);
+}
+.titleGet{
+    color:black;
+}
 @media (max-width: 999px) {
     .container {
         max-width: none;

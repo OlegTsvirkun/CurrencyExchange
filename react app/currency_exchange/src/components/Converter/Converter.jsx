@@ -1,30 +1,42 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import styles from "./GiveMoney.module.scss";
+import styles from "./Converter.module.scss";
 
-export const GiveMoney = ({title, value, setValue, rate, setRate, option, setOption,curList,
-	setCurList }) => {
-	
+export const Converter = ({
+	className,
+	titleClassName,
+	title,
+	value,
+	setValue,
+	rate,
+	setRate,
+	option,
+	setOption,
+	curList,
+	inptName,
+	slctName,
+	setCurList,
+}) => {
 	const { currencies, isLoading } = useSelector((state) => state.currency);
 
 	const isUAH = useRef(false);
 
 	if (isLoading) return <>Loading..</>;
 	return (
-		<div className={styles.giveMoney + " " + styles.block}>
-			<div className={styles.title}>{title}</div>
+		<div className={styles.Converter + " " + styles.block + " " + className}>
+			<div className={styles.title + " " + titleClassName}>{title}</div>
 			<div className={styles.inputs}>
 				<input
-					name="inptGive"
+					name={inptName}
 					// id="number-give"
 					className={styles.value}
 					onChange={(e) => setValue(e.target.value)}
-					value={typeof value == 'number'? value.toFixed(2):value}
+					value={typeof value == "number" ? value.toFixed(2) : value}
 					type="number"
 				/>
 				<select
-					name="slctGive"
+					name={slctName}
 					className={styles.currency}
 					value={option}
 					onChange={(e) => {

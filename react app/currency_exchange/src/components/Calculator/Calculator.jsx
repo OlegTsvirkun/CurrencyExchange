@@ -1,10 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { Converter } from "../Converter";
 
-
-import { GetMoney } from "../GetMoney/GetMoney";
-import { GiveMoney } from "../GiveMoney/GiveMoney";
 import styles from "./Calculator.module.scss";
 
 export const Calculator = () => {
@@ -44,7 +41,7 @@ export const Calculator = () => {
 
 				giveIsActive.current = true;
 				getIsActive.current = false;
-				
+
 				break;
 
 			case "slctGive":
@@ -67,7 +64,7 @@ export const Calculator = () => {
 
 				giveIsActive.current = true;
 				getIsActive.current = false;
-				
+
 				break;
 
 			case "inptGet":
@@ -96,8 +93,8 @@ export const Calculator = () => {
 					setGetValue(
 						giveValue *
 							(getRate / giveRate > 1
-								? giveRate / currencies[e.target.value].rate
-								: currencies[e.target.value].rate / giveRate),
+								? currencies[e.target.value].rate / giveRate
+								: giveRate / currencies[e.target.value].rate),
 					);
 				}
 				giveIsActive.current = false;
@@ -108,31 +105,41 @@ export const Calculator = () => {
 	};
 	return (
 		<div className={styles.calculator}>
-			<form  className={styles.block} onChange={(e) => handleForm(e)}>
+			<form className={styles.block} onChange={(e) => handleForm(e)}>
 				{
 					<>
-						<GiveMoney
+						<Converter
+							inptName="inptGive"
+							slctName="slctGive"
+							className={`${styles.blue} ${
+								giveIsActive.current ? styles.active : ""
+							}`}
 							title={giveIsActive.current ? "You give" : "You get"}
 							value={giveValue}
 							setValue={setGiveValue}
 							rate={giveRate}
-							setRate={(e) => setGiveRate(e)}
+							setRate={setGiveRate}
 							option={giveOption}
 							setOption={setGiveOption}
 							curList={giveCurList}
 							setCurList={setGiveCurList}
 						/>
-						<GetMoney
+						<Converter
+							inptName="inptGet"
+							slctName="slctGet"
+							className={`${getIsActive.current ? styles.active : ""}`}
+							titleClassName={styles.titleGet}
 							title={getIsActive.current ? "You give" : "You get"}
 							value={getValue}
 							setValue={setGetValue}
 							rate={getRate}
-							setRate={(e) => setGetRate(e)}
+							setRate={setGetRate}
 							option={getOption}
-							setOption={(e) => setGetOption(e)}
+							setOption={setGetOption}
 							curList={getCurList}
 							setCurList={setGetCurList}
 						/>
+						
 					</>
 				}
 			</form>
