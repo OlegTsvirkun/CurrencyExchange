@@ -1,9 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import currencyService from "./currencyService";
 
-export const getCurrency = createAsyncThunk('GET_CURRENCIES',async ({currency,date},thunkAPI)=>{
+export const getCurrency = createAsyncThunk('GET_CURRENCIES',async (_,thunkAPI)=>{
     try {
-        return await currencyService.getCurrency(currency,date)
+        return await currencyService.getCurrency()
     } catch (error) {
         return thunkAPI.rejectWithValue(error.response.data)
     }

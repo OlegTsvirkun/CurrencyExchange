@@ -1,63 +1,38 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-	setGiveCurrency,
-	setGiveRate,
-	setGiveValue,
-} from "../../store/calculationSlice";
+
 import styles from "./GiveMoney.module.scss";
 
-export const GiveMoney = (
-	{
-	},
-) => {
-	const { GiveValue, GiveCurrency, GiveCurrencyOpt } = useSelector(
-		(state) => state.calculation,
-	);
+export const GiveMoney = ({title, value, setValue, rate, setRate, option, setOption,curList,
+	setCurList }) => {
+	
 	const { currencies, isLoading } = useSelector((state) => state.currency);
 
-	const [input, setInput] = useState(GiveValue);
 	const isUAH = useRef(false);
-	const dispatch = useDispatch();
-
-	useEffect(() => {
-		dispatch(setGiveValue(input));
-	}, [input]);
-
-	const inputChange = (e) => {
-		setInput(e.currentTarget.value);
-
-		console.log(e.target);
-		// dispatch(setGiveValue(e.currentTarget.value))
-	};
-	const selectChange = (e) => {
-		dispatch(setGiveCurrency(e.currentTarget.value));
-		dispatch(setGiveRate(currencies[e.currentTarget.value].rate));
-	};
 
 	if (isLoading) return <>Loading..</>;
 	return (
 		<div className={styles.giveMoney + " " + styles.block}>
-			<div className={styles.title}>You give</div>
+			<div className={styles.title}>{title}</div>
 			<div className={styles.inputs}>
 				<input
-					name=""
-					id="number-give"
+					name="inptGive"
+					// id="number-give"
 					className={styles.value}
-					onChange={(e) => inputChange(e)}
-					value={input}
+					onChange={(e) => setValue(e.target.value)}
+					value={typeof value == 'number'? value.toFixed(2):value}
 					type="number"
 				/>
 				<select
-					name="currency-give"
+					name="slctGive"
 					className={styles.currency}
-					value={GiveCurrency}
+					value={option}
 					onChange={(e) => {
-						selectChange(e);
+						setOption(e.target.value);
 						isUAH.current = true;
 					}}
 				>
-					{GiveCurrencyOpt.map((key) => (
+					{curList.map((key) => (
 						<option value={key} key={key}>
 							{key}
 						</option>

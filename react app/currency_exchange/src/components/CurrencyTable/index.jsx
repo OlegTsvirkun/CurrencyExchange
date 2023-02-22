@@ -1,1 +1,1 @@
-export * from './CurrencyTable'
+export * from './CurrencyTable' 

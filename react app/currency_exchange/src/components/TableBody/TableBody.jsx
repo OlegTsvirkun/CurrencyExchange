@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './TableBody.module.scss';
 
 export const TableBody = ({txt,rate,cc}) =>{
-  return (
+ if(cc!='UAH') return (
   
     <tr key = {rate+cc}>
                        
