@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from './HeaderLogo.module.scss';
+import styles from './HeaderLogo.module.css';
 
 export const HeaderLogo = ({}) => (
 	<div className={styles.logo}>
-						<div className={styles.logo__title}>Обмінка UA</div>
-						<div className={styles.logo__flag}>
-							<div className={styles.logo__blue}></div>
-							<div className={styles.logo__yellow}></div>
+						<div className={styles.title}>Обмінка UA</div>
+						<div className={styles.flag}>
+							<div className={styles.blue}></div>
+							<div className={styles.yellow}></div>
 						</div>
 					</div>
 );

@@ -1,45 +1,46 @@
 .logo {
     position: relative;
-    &__title {
+}
+    .title {
         left: 50%;
         top: 50%;
         position: absolute;
         text-align: center;
-        // transform: translateY(60%);
+        /* // transform: translateY(60%); */
         transform: translate(-50%, -50%);
         font-size: 35px;
         text-transform: uppercase;
         color: rgb(255, 255, 255);
         text-shadow: 1px 1px 2px rgb(110, 110, 110);
 
-        // font-border: 1px solid black;
+        /* font-border: 1px solid black; */
     }
-    &__flag {
+    .flag {
         height: 100%;
         display: flex;
         flex-direction: column;
     }
-    &__blue {
+    .blue {
         height: 40px;
         background-color: #3371db;
     }
-    &__yellow {
+    .yellow {
         height: 40px;
         background-color: #fff374;
     }
-}
+
 @media (max-width: 759px) {
-    .logo__title {
+    .title {
         font-size: 28px;
     }
 }
 @media (max-width: 565px) {
-    .logo__title {
+    .title {
         font-size: 22px;
     }
 }
 @media (max-width: 450px) {
-    .logo__title {
+    .title {
         font-size: 18px;
     }
 }

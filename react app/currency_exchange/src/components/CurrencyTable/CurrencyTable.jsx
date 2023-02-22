@@ -19,12 +19,7 @@ if(isLoading){
   />
 </>
 }
-// const { USD, EUR, cross } = currencies.reduce((acc, item) => {
-//   if (item.currencyCodeB == "UAH") acc[item.currencyCodeA] = item;
-//   else acc['cross'] = item;
-//   return acc;
-// }, {});
-// console.log('cross',cross);
+
 else if(!isLoading){
 
   return(
@@ -39,44 +34,14 @@ else if(!isLoading){
                       <tr>
                           <th className={styles.table__currency}>Currency</th>
                           <th >Code</th>
-                          <th>Buy</th>
-                          <th>Sell</th>
+                          <th>Rate</th>
                           <th>Order</th>
                       </tr>
                    </thead>
                    <tbody>
-                   {currencies.map(currencies=><TableBody key ={`${currencies.currencyCodeA}${currencies.rateBuy}  `}  {...currencies}/>)
-                
+                   {
+                   Object.keys(currencies).map(key=><TableBody key ={key}  {...currencies[key]}/>)
                    }
-                  
-                      {/* <tr>
-                          <td className={styles.table__currency}>U.S. dollar</td>
-                          <td>USD</td>
-                          <td>40.1500</td>
-                          <td>40.1500</td>
-                          <td>yes</td>
-                      </tr>
-                      <tr>
-                          <td className={styles.table__currency}>Euro</td>
-                          <td>EUR</td>
-                          <td>42.1500</td>
-                          <td>44.1500</td>
-                          <td>yes</td>
-                      </tr>
-                      <tr>
-                          <td className={styles.table__currency}>U.S. dollar</td>
-                          <td>USD</td>
-                          <td>40.1500</td>
-                          <td>40.1500</td>
-                          <td>yes</td>
-                      </tr>
-                      <tr>
-                          <td className={styles.table__currency}>Euro</td>
-                          <td>EUR</td>
-                          <td>42.1500</td>
-                          <td>44.1500</td>
-                          <td>yes</td>
-                      </tr> */}
                     </tbody>
                 </table>
             </div>

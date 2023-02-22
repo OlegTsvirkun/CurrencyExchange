@@ -1,36 +1,42 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import currencyService from "./currencyService";
 
-export const getCurrencies = createAsyncThunk('GET_CURRENCIES',async (_,thunkAPI)=>{
+export const getCurrency = createAsyncThunk('GET_CURRENCIES',async ({currency,date},thunkAPI)=>{
     try {
-        return await currencyService.getCurrency()
+        return await currencyService.getCurrency(currency,date)
     } catch (error) {
         return thunkAPI.rejectWithValue(error.response.data)
     }
 })
 
 const currencySlice = createSlice({
-    name: 'currencies',
+    name: 'currency',
     initialState:{
-        currencies:[],
+        currencies:{
+            UAH:{
+                txt: "Українська гривня",
+                rate:1,
+                cc:'UAH'
+            }
+        },
         isLoading:true,
         isError:false,
         message: ''
     },
     extraReducers:(builder)=>{
-        builder.addCase(getCurrencies.pending,(state)=>{
+        builder.addCase(getCurrency.pending,(state)=>{
             state.isLoading = true;
         })
-        builder.addCase(getCurrencies.fulfilled,(state,action)=>{
+        builder.addCase(getCurrency.fulfilled,(state,action)=>{
             // console.log(action.payload);
             state.isLoading = false;
-            state.currencies = action.payload;
+            state.currencies = {...state.currencies, ...action.payload};
         })
-        builder.addCase(getCurrencies.rejected,(state,action)=>{
+        builder.addCase(getCurrency.rejected,(state,action)=>{
             state.isLoading = false;
             state.isError = true;
-            // state.message = action.payload.message;
-            state.planes = null;
+            state.message = action.payload;
+            state.currencies = [];
         
         })
     }

@@ -1,51 +1,37 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { cur } from "../../curr";
-import { isoCode } from "../../ISO_cur";
-import { LineWave } from "react-loader-spinner";
+// import { cur } from "../../curr";
+// import { isoCode } from "../../ISO_cur";
 
-import { getCurrencies } from "../../store/currencySlice";
-import styles from "./HeaderCurrencies.module.scss";
+// import { getCurrencies } from "../../store/currencySlice";
+import styles from "./HeaderCurrencies.module.css";
 import { useState } from "react";
-
+import { CurrencyItem } from "../CurrencyItem/CurrencyItem";
+import CurrenciesName from '../../headerList.json'
+// const CurrenciesName = {
+// 	USD: "Доллар",
+// 	EUR: "Євро",
+// 	GBP: "Британський фунт",
+// };
 export const HeaderCurrencies = ({}) => {
 	const [usd, setUsd] = useState([]);
 	const [eur, setEur] = useState([]);
 	const dispatch = useDispatch();
 
-	const { currencies, isLoading } = useSelector((state) => state.currency);
-
-	useEffect(() => {
-		dispatch(getCurrencies());
-	}, [dispatch]);
-	if (isLoading) {
-		return (
-			<div className={styles.currencies}>
-				<ul className={styles.currencies__item}>
-					<li className={styles.currencies__dollar}>USD: Загрузка...</li>
-					<li className={styles.currencies__euro}>EUR :Загрузка...</li>
-				</ul>
-			</div>
-		);
-	}
-	if (!isLoading) {
-		const { USD, EUR } = currencies.reduce((acc, item) => {
-			if (item.currencyCodeB == "UAH") acc[item.currencyCodeA] = item;
-			return acc;
-		}, {});
-
-		return (
-			<div className={styles.currencies}>
-				<ul className={styles.currencies__item}>
-					<li className={styles.currencies__dollar}>
-						USD: {`buy: ${USD.rateBuy} / sell: ${USD.rateSell}`}
+	// const { currencies, isLoading } = useSelector((state) => state.currency);
+	const [y, m, d] = new Date().toISOString().split("T")[0].split("-");
+	const date = `${y}${m}${d}`;
+	console.log(date);
+	return (
+		<div className={styles.currencies}>
+			<ul className={styles.list}>
+				{Object.keys(CurrenciesName).map((key) => (
+					<li key = {key} className={styles.itemLi}>
+						<CurrencyItem  className= {styles.item} currency={key} date={date} />
 					</li>
-					<li className={styles.currencies__euro}>
-						EUR: {`buy: ${EUR.rateBuy} / sell: ${EUR.rateSell}`}
-					</li>
-				</ul>
-			</div>
-		);
-	}
+				))}
+			</ul>
+		</div>
+	);
 };

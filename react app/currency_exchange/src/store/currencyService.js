@@ -1,34 +1,18 @@
-// https://api.monobank.ua/bank/currency
+// https://api.monobank.ua/bank/currency?valcode=EUR&date=YYYYMMDD
+const date = new Date
 
 import axios from 'axios'
-import { cur } from '../curr';
-import { newCurrArr } from '../func';
-const iso = [{
-    "code":"USD",
-    "name":"United States dollar",
-    "number":"840"
-},
-{
-    "code":"EUR",
-    "name":"Euro",
-    "number":"978"
-},
-{
-    "code":"UAH",
-    "name":"Ukrainian hryvnia",
-    "number":"980"
-},]
-const getCurrency = async ()=>{
+const getCurrency = async (currency,date='20230221' )=>{
    
-        const currency = await axios(
-            // 'https://api.monobank.ua/bank/currency'
-            'https://638888e4a4bb27a7f78a04ec.mockapi.io/currency'
+        const {data} = await axios.get(
+            `https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=${currency}&date=${date}&json`
             )
-            const currencyData = await currency.data
-            const res = []
-            res.push(currencyData[0],currencyData[1],currencyData[2])
-            console.log(res);
-        return newCurrArr(res)
+         return   data.reduce((acc, item)=>{
+                acc[item.cc] = item
+                // console.log(acc)
+                return acc
+            },{})
+        return data
 }
     
    
