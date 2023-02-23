@@ -11,10 +11,10 @@ export const HomePage = ({}) => {
 
 	return (
 		<div className={styles.homePage}>
-			<ContentWrapper>
+			<ContentWrapper className={styles.wrapper}>
 				<CurrencyTable />
 			</ContentWrapper>
-			<div className="container">
+			<div className={styles.container}>
 				{!isLoading && <Calculator />}
 			</div>
 		</div>

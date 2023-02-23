@@ -23,18 +23,14 @@ export const HeaderCurrencies = ({}) => {
 	useEffect(()=>{
 	  dispatch(getCurrency())
 	},[])
-	// const { currencies, isLoading } = useSelector((state) => state.currency);
-	// const [y, m, d] = new Date().toISOString().split("T")[0].split("-");
-	// const date = `${y}${m}${d}`;
-	// console.log(date);
-	// Object.keys(currencies).map((key) => console.log(key.rate))
+	
 	return (
 		<div className={styles.currencies}>
 			<ul className={styles.list}>
 				{Object.keys(currencies).map((key) =>{ 
 					if(key != "UAH")return (
 					<li key = {key} className={styles.itemLi}>
-						<CurrencyItem  className= {styles.item} currency={key} rate = {currencies[key].rate} title = {currencies[key].cc}/>
+						<CurrencyItem  className= {styles.item} currency={key} rate = {typeof currencies[key].rate =='number' && currencies[key].rate.toFixed(2)} title = {currencies[key].cc}/>
 					</li>
 					)
 				})}

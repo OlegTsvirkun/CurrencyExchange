@@ -9,11 +9,11 @@ export const CurrencyItem = ({currency, rate, title,className}) =>{
 const dispatch = useDispatch()
 
 
-// console.log(currencies)
-// if(!Object.keys(currencies).includes(currency)) return<> <LineWave  wrapperClass={styles.currencyItem}  height='30' /></>
+
   return (
   <div className={`${styles.currencyItem} ${className}`}>
-  {title}: {rate}
+    <div>{title}:</div><div>{rate} uah</div>
+   
   </div>
 )};
 

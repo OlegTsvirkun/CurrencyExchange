@@ -11,6 +11,9 @@
 .item{
 margin: 2px;
 }
+.itemLi{
+    width: 150px;
+}
 @media (max-width: 565px) {
 
 .currencies {

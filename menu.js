@@ -10,7 +10,7 @@ menu.addEventListener('click', () => {
     helper.style.width = menu.offsetWidth + 'px';
 
 
-
+  
 
 })
 window.addEventListener('resize', () => helper.style.width = menu.offsetWidth + 'px')

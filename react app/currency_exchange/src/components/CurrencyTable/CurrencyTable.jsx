@@ -25,14 +25,14 @@ else if(!isLoading){
   return(
    <div className={styles.currenciesRate}>
      <div className={styles.currenciesRate}>
-                <div className={styles.currenciesRate__title}>Currency rate</div>
-                <div className={styles.currenciesRate__description}>Get a full range of foreign exchange transactions and sales
+                <div className={styles.title}>Currency rate</div>
+                <div className={styles.description}>Get a full range of foreign exchange transactions and sales
                 </div>
 
-                <table className={styles.currenciesRate__item}>
+                <table className={styles.item}>
                    <thead>
                       <tr>
-                          <th className={styles.table__currency}>Currency</th>
+                          <th className={styles.currency}>Currency</th>
                           <th >Code</th>
                           <th>Rate</th>
                           <th>Order</th>

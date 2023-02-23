@@ -1,4 +1,5 @@
 .menu {
+    width: 100%;
     padding: 0 10px;
     background-color: #fff374;
     display: flex;
@@ -10,89 +11,84 @@
     cursor: pointer;
     // overflow: hidden;
     position: relative;
-    &__helper {
-        position: sticky;
-        background-color: #fff374;
+}
+.menuItem {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center; /* центрируем содержимое кнопки */
+    justify-content: center;
 
-        height: 80px;
-        position: fixed;
-        z-index: 12;
-        top: 0;
-    }
-    &__list {
-        position: absolute;
-        // right: 100%; //!
-        display: flex;
-        align-items: center;
-        // transform: translateX(50%);
-        // background-color: #015aff;
-        transform: translateX(100%);
-        right: -100%;
-        height: 80px;
-        transition: 0.3s;
-        // display: none;
-        z-index: 11;
-    }
-    &__item {
-        display: flex; /* используем flex для центрирования содержимого */
-        align-items: center; /* центрируем содержимое кнопки */
-        justify-content: center;
+    transform: translateY(0%);
 
-        transform: translateY(0%);
+    width: 35px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s;
+}
+.title {
+    transform: translateY(-350%);
+    display: block;
+    // display: none;
+    transition: all 0.8s;
+    // position: relative;
+    // transform: translateY(0);
+}
+.helper {
+    position: absolute;
+    background-color: #fff374;
+    width: 100%;
+    height: 80px;
+    left: 0;
+    // position: fixed;
+    z-index: 9;
+    top: 0;
+}
+.list {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    transform: translateX(150%);
+    right: -100%;
+    height: 80px;
+    transition: 0.3s;
+    visibility: hidden;
+    // display: none;
+    z-index: 8;
+}
+.menuItem span,
+.menuItem span::before,
+.menuItem span::after {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #3371db;
+}
+.menuItem span::before {
+    content: "";
+    top: -10px;
+}
+.menuItem span::after {
+    content: "";
+    top: 10px;
+}
 
-        width: 35px;
-        height: 26px;
-        cursor: pointer;
-        z-index: 13;
-        transition: all 0.3s;
-    }
-    &__title {
-        transform: translateY(-350%);
-        display: block;
-        // display: none;
-        transition: all 0.8s;
-        // position: relative;
-        // transform: translateY(0);
-    }
-    &__item span,
-    &__item span::before,
-    &__item span::after {
-        // display: block;
-        // display: none;
-        position: absolute;
-
-        // bottom:-200%;
-        width: 100%;
-        height: 4px;
-        //   background-color: transparent;
-        background-color: #3371db;
-    }
-    &__item span::before {
-        content: "";
-        top: -10px;
-    }
-    &__item span::after {
-        content: "";
-        top: 10px;
-    }
-
-    &__item:hover {
-        span,
-        span::after,
-        span::before {
-            background-color: #015aff;
-        }
+.menuItem:hover {
+    span,
+    span::after,
+    span::before {
+        background-color: #015aff;
     }
 }
 .hide {
     transform: translateY(250%);
 }
 
-.menu-open {
-    transform: translateX(0%);
-    right: 100%;
+.menuOpen {
+    visibility: visible;
+    transform: translateX(-120%);
+    // right: 100%;
 }
-.menu-click {
+.menuClick {
     span {
         height: 0;
         transform: rotate(45deg);
@@ -116,17 +112,17 @@
     }
 }
 .menu:hover {
-    .menu__item {
+    .menuItem {
         transform: translateY(0);
     }
-    .menu__item span,
-    .menu__item span::after,
-    .menu__item span::before {
+    .menuItem span,
+    .menuItem span::after,
+    .menuItem span::before {
         background-color: #3371db;
     }
 }
 
-.menu-hover {
+.menuHover {
     transform: translateY(0);
 }
 
@@ -134,12 +130,12 @@
     .logo__title {
         font-size: 28px;
     }
-    .menu__item {
+    .menuItem {
         transform: translateY(0);
     }
-    .menu__item span,
-    .menu__item span::after,
-    .menu__item span::before {
+    .menuItem span,
+    .menuItem span::after,
+    .menuItem span::before {
         background-color: #3371db;
     }
 }
