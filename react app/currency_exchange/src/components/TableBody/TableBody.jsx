@@ -8,8 +8,8 @@ export const TableBody = ({txt,rate,cc}) =>{
                        
                         <td>{txt}</td>
                         <td>{cc}</td>
-                        <td>{typeof rate =='number' && rate.toFixed(2)}</td>
-                        <td>yes</td>
+                        <td>{typeof rate =='number' && rate.toFixed(2)} uah</td>
+                        <td>так</td>
                     </tr>
   
 )};

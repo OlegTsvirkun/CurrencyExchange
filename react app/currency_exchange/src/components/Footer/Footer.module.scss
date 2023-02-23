@@ -1,3 +1,38 @@
-.footer{
+
+.footer {
+    display: flex;
+    justify-content:space-around;
+    margin-top: 30px;
+    height: 80px;
+    background-color: rgb(39, 39, 39);
+    color: azure;
+    padding: 5px 5px;
+    // flex-wrap: wrap;
+    align-items:center;
+    // justify-content:flex-start;
+
     
+}
+.block{
+    display: flex;
+    justify-content:space-between;
+    width: 80%;
+
+}
+.contacts {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    color:whitesmoke;
+   
+}
+.tel{
+    
+}
+.items{
+    margin: 0 10px;
+}
+.logo {
+width: 50px;
 }

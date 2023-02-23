@@ -25,17 +25,17 @@ else if(!isLoading){
   return(
    <div className={styles.currenciesRate}>
      <div className={styles.currenciesRate}>
-                <div className={styles.title}>Currency rate</div>
-                <div className={styles.description}>Get a full range of foreign exchange transactions and sales
+                <div className={styles.title}>Курс валют</div>
+                <div className={styles.description}>Тут ви можете отримати усю інформацію з операцій по валюті
                 </div>
 
                 <table className={styles.item}>
                    <thead>
                       <tr>
-                          <th className={styles.currency}>Currency</th>
-                          <th >Code</th>
-                          <th>Rate</th>
-                          <th>Order</th>
+                          <th className={styles.currency}>Валюта</th>
+                          <th >Код</th>
+                          <th>Курс</th>
+                          <th>Наявність</th>
                       </tr>
                    </thead>
                    <tbody>
