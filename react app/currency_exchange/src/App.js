@@ -3,14 +3,17 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import {HomePage} from './pages/HomePage/'
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
+import { routes } from './const/routes';
 function App() {
   return (
     <div className="App">
      <Router>
       <Header/>
       <Routes>
-        <Route exact path='/' element = {<HomePage/>}/>
-        {/* <Route exact path='/' element = {<HomePage/>}/> */}
+        {routes.map(({path, Component})=>
+        <Route key={path} exact path ={path} element = {<Component/>}/>
+        )}
+       
       </Routes>
       <Footer/>
      </Router>

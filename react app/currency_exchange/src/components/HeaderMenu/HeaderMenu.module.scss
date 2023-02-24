@@ -102,15 +102,14 @@
     }
 }
 .menuList {
-    &__item {
-        padding: 0 20px;
-        transition: all 0.3s;
-        cursor: pointer;
-    }
-    &__item:hover {
-        color: hsl(207, 100%, 64%);
-    }
+    padding: 0 20px;
+    transition: all 0.3s;
+    cursor: pointer;
 }
+.menuList:hover {
+    color: hsl(207, 100%, 64%);
+}
+
 .menu:hover {
     .menuItem {
         transform: translateY(0);

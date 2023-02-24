@@ -1,4 +1,7 @@
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { menuList } from "../../const/menuList";
+import { ModalBackground } from "../ModalBackground/ModalBackground";
 import styles from "./HeaderMenu.module.scss";
 
 export const HeaderMenu = ({}) => {
@@ -20,12 +23,14 @@ export const HeaderMenu = ({}) => {
 					isOpen && styles.menuOpen
 				}`}
 			>
-				<li className={styles.menuList__item}>Замовити валюту</li>
-				<li className={styles.menuList__item}>Мапа проїзду</li>
-				<li className={styles.menuList__item}>Контакти</li>
+				{menuList.map(({ path, title }) => (
+					<li key={path} className={styles.menuList}>
+						<Link to={path}>{title}</Link>
+					</li>
+				))}
 			</ul>
 			<div className={styles.helper}></div>
+			{isOpen && <ModalBackground />}
 		</div>
-		
 	);
 };
