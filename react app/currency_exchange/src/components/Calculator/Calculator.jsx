@@ -114,7 +114,7 @@ export const Calculator = () => {
 							className={`${styles.blue} ${
 								giveIsActive.current ? styles.active : ""
 							}`}
-							title={giveIsActive.current ? "You give" : "You get"}
+							title={giveIsActive.current ? "Ви даєте :" : "Ви отримуєте :"}
 							value={giveValue}
 							setValue={setGiveValue}
 							rate={giveRate}
@@ -129,7 +129,7 @@ export const Calculator = () => {
 							slctName="slctGet"
 							className={`${getIsActive.current ? styles.active : ""}`}
 							titleClassName={styles.titleGet}
-							title={getIsActive.current ? "You give" : "You get"}
+							title={getIsActive.current ? "Ви даєте :" : "Ви отримуєте :"}
 							value={getValue}
 							setValue={setGetValue}
 							rate={getRate}

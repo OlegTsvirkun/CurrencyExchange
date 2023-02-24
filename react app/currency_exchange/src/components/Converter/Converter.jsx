@@ -29,7 +29,6 @@ export const Converter = ({
 			<div className={styles.inputs}>
 				<input
 					name={inptName}
-					// id="number-give"
 					className={styles.value}
 					onChange={(e) => setValue(e.target.value)}
 					value={typeof value == "number" ? value.toFixed(2) : value}
@@ -49,7 +48,6 @@ export const Converter = ({
 							{key}
 						</option>
 					))}
-					{/* <option value={1}>UAH</option> */}
 				</select>
 			</div>
 		</div>

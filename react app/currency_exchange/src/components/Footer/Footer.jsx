@@ -11,24 +11,24 @@ export const Footer = ({}) => {
 			<img className={styles.logo} src={logo} />
 			<div className={styles.block}>
 				<div>
-				        <div className={styles.contacts}>Адреса: </div>
-        				<div className={styles.contacts}>
+        				<div className={styles.items}>
+				        <div>Адреса: </div>
         					{Object.values(contacts.address)[0]}
         				</div>
 				</div>
 				<div >
-				        <div className={styles.contacts}>Телефони:</div>{" "}
         				<ul className={styles.contacts}>
+				        <div >Телефони:</div>{" "}
         					{Object.values(contacts.tel)[0].map((item) => (
-        						<li className={styles.items}>{item}</li>
+        						<li key={item} className={styles.items}>{item}</li>
         					))}
         				</ul>
 				</div>
 				<div>
-				        <div className={styles.contacts}>Часи роботи:</div>
         				<ul className={styles.contacts}>
+				        <div >Часи роботи:</div>
         					{Object.keys(contacts.schedule).map((item) => (
-        						<li className={styles.items}>
+        						<li key={item} className={styles.items}>
         							{item}: {contacts.schedule[item]}
         						</li>
         					))}

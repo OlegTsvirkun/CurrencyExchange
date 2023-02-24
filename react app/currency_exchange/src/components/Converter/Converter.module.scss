@@ -23,24 +23,24 @@
     text-align: center;
     display: flex;
 
-    justify-content: center;
+    justify-content: space-between;
 }
 .inputs input{
     margin-right: 20px;
 }
-.give {
+// .give {
 
-    &__value {
-        background-color: transparent;
-        color: rgb(255, 255, 255);
-        text-shadow: 1px 1px 2px rgb(110, 110, 110);
-    }
-    &__currency {
-        background-color: transparent;
-        color: rgb(255, 255, 255);
-        text-shadow: 1px 1px 2px rgb(110, 110, 110);
-        option {
-            background-color: #3371db;
-        }
-    }
-}
+//     &__value {
+//         background-color: transparent;
+//         color: rgb(255, 255, 255);
+//         text-shadow: 1px 1px 2px rgb(110, 110, 110);
+//     }
+//     &__currency {
+//         background-color: transparent;
+//         color: rgb(255, 255, 255);
+//         text-shadow: 1px 1px 2px rgb(110, 110, 110);
+//         option {
+//             background-color: #3371db;
+//         }
+//     }
+// }
