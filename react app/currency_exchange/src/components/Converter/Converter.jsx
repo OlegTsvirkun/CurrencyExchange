@@ -37,7 +37,7 @@ export const Converter = ({
 						type="number"
 					/>
 					{input.current?.value && (
-						<span className={styles.reset}>&#10005;</span>
+						<span className={styles.reset} onClick={()=>setValue("")}>&#10005;</span>
 					)}
 				</div>
 				<select
