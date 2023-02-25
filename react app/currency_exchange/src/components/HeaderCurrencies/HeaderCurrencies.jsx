@@ -8,16 +8,11 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "./HeaderCurrencies.module.css";
 import { useState } from "react";
 import { CurrencyItem } from "../CurrencyItem/CurrencyItem";
-import CurrenciesName from '../../headerList.json'
+// import CurrenciesName from '../../headerList.json'
 import { getCurrency } from "../../store/currencySlice";
-// const CurrenciesName = {
-// 	USD: "Доллар",
-// 	EUR: "Євро",
-// 	GBP: "Британський фунт",
-// };
+
 export const HeaderCurrencies = ({}) => {
-	const [usd, setUsd] = useState([]);
-	const [eur, setEur] = useState([]);
+
 	const dispatch = useDispatch();
 	const {currencies} = useSelector(state=>state.currency)
 	useEffect(()=>{

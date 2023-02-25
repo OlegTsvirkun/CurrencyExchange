@@ -11,7 +11,7 @@ export const HomePage = ({}) => {
 
 	return (
 		<div className={styles.homePage}>
-			<ContentWrapper className={styles.wrapper}>
+			<ContentWrapper >
 				<CurrencyTable />
 			</ContentWrapper>
 			<div className={styles.container}>

@@ -1,4 +1,4 @@
-import curList from '../headerList.json'
+import curList from '../const/headerList.json'
 // https://api.monobank.ua/bank/currency?valcode=EUR&date=YYYYMMDD
 const date = new Date
 

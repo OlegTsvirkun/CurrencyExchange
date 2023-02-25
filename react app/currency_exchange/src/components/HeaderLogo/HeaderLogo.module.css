@@ -24,7 +24,7 @@
     }
     .blue {
         height: 40px;
-        background-color: #3371db;
+        background-color: var( --blue);
     }
     .yellow {
         height: 40px;

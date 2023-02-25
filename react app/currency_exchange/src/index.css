@@ -14,9 +14,11 @@ color: inherit}
 a:hover{text-decoration:none;}
 ul li{list-style:none;}
 img{vertical-align:top;}
-h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+/* h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;} */
 /*--------------------*/
-body{
-   
+:root{
+    --black-grey: rgb(31, 31, 31);
+    --blue:rgb(51, 113, 219);
+    --yellow:#fff374;
 }
 

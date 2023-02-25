@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Footer.module.scss";
 import logo from "../../ico.svg";
-import contacts from "../../contacts.json";
+import contacts from "../../const/contacts.json";
 
 export const Footer = ({}) => {
 	console.log(Object.values(contacts.schedule)[0]);

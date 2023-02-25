@@ -7,7 +7,7 @@
     justify-content: center;
     font-weight: 700;
     font-size: 18px;
-    color: #3371db;
+    color: var( --blue);
     cursor: pointer;
     // overflow: hidden;
     position: relative;
@@ -61,7 +61,7 @@
     position: absolute;
     width: 100%;
     height: 4px;
-    background-color: #3371db;
+    background-color: var( --blue);
 }
 .menuItem span::before {
     content: "";
@@ -85,8 +85,8 @@
 
 .menuOpen {
     visibility: visible;
-    transform: translateX(-120%);
-    // right: 100%;
+    transform: translateX(0%);
+    right: 100%;
 }
 .menuClick {
     span {
@@ -104,7 +104,13 @@
 .menuList {
     padding: 0 20px;
     transition: all 0.3s;
+    height: 100%;
     cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items:center;
+   
+  
 }
 .menuList:hover {
     color: hsl(207, 100%, 64%);
@@ -117,7 +123,7 @@
     .menuItem span,
     .menuItem span::after,
     .menuItem span::before {
-        background-color: #3371db;
+        background-color: var( --blue);
     }
 }
 
@@ -135,6 +141,6 @@
     .menuItem span,
     .menuItem span::after,
     .menuItem span::before {
-        background-color: #3371db;
+        background-color: var( --blue);
     }
 }

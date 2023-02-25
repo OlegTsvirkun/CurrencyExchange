@@ -7,7 +7,7 @@ import { HeaderMenu } from "../HeaderMenu/HeaderMenu";
 import styles from "./Header.module.css";
 
 export const Header = ({}) => (
-	<div className={styles.header}>
+	// <div className={styles.header}>
 		<header className={styles.header}>
 			<div className={styles.container}>
 				<div className={styles.item}>
@@ -17,5 +17,5 @@ export const Header = ({}) => (
 				</div>
 			</div>
 		</header>
-	</div>
+	// </div>
 );

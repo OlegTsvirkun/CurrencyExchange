@@ -18,17 +18,17 @@ export const HeaderMenu = ({}) => {
 				<div className={styles.title}>MENU</div>
 				<span></span>
 			</div>
-			<ul
+			<div
 				className={`${styles.list} ${styles.notactive} ${
 					isOpen && styles.menuOpen
 				}`}
 			>
 				{menuList.map(({ path, title }) => (
-					<li key={path} className={styles.menuList}>
-						<Link to={path}>{title}</Link>
-					</li>
+					// <li key={path} className={styles.menuList}>
+						<Link className={styles.menuList}  key={path}  to={path}><span>{title}</span></Link>
+					// </li>
 				))}
-			</ul>
+			</div>
 			<div className={styles.helper}></div>
 			{isOpen && <ModalBackground />}
 		</div>

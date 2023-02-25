@@ -1,5 +1,5 @@
 
-import { CONTACTS_ROUTE,  LOCATION_ROUTE, ORDER_ROUTE } from "./constPaths";
+import { CONTACTS_ROUTE,   ORDER_ROUTE } from "./constPaths";
 
 export const menuList=[
 
@@ -11,8 +11,5 @@ export const menuList=[
     path: ORDER_ROUTE,
     title: 'Замовити валюту'
 },
-{
-    path: LOCATION_ROUTE,
-    title: 'Мапа проїзду'
-}
+
 ]
