@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, {  useState } from "react";
 import { Link } from "react-router-dom";
 import { menuList } from "../../const/menuList";
 import { ModalBackground } from "../ModalBackground/ModalBackground";
@@ -6,7 +6,6 @@ import styles from "./HeaderMenu.module.scss";
 
 export const HeaderMenu = ({}) => {
 	const [isOpen, setIsOpen] = useState(false);
-	const isClick = useRef(false);
 
 	return (
 		<div id="menu" className={styles.menu} onClick={() => setIsOpen(!isOpen)}>
@@ -24,9 +23,9 @@ export const HeaderMenu = ({}) => {
 				}`}
 			>
 				{menuList.map(({ path, title }) => (
-					// <li key={path} className={styles.menuList}>
-						<Link className={styles.menuList}  key={path}  to={path}><span>{title}</span></Link>
-					// </li>
+					<Link className={styles.menuList} key={path} to={path}>
+						<span>{title}</span>
+					</Link>
 				))}
 			</div>
 			<div className={styles.helper}></div>

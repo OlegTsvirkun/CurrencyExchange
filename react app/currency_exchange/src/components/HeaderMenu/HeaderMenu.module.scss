@@ -7,9 +7,8 @@
     justify-content: center;
     font-weight: 700;
     font-size: 18px;
-    color: var( --blue);
+    color: var(--blue);
     cursor: pointer;
-    // overflow: hidden;
     position: relative;
 }
 .menuItem {
@@ -28,10 +27,7 @@
 .title {
     transform: translateY(-350%);
     display: block;
-    // display: none;
     transition: all 0.8s;
-    // position: relative;
-    // transform: translateY(0);
 }
 .helper {
     position: absolute;
@@ -39,7 +35,6 @@
     width: 100%;
     height: 80px;
     left: 0;
-    // position: fixed;
     z-index: 9;
     top: 0;
 }
@@ -52,7 +47,6 @@
     height: 80px;
     transition: 0.3s;
     visibility: hidden;
-    // display: none;
     z-index: 8;
 }
 .menuItem span,
@@ -61,7 +55,7 @@
     position: absolute;
     width: 100%;
     height: 4px;
-    background-color: var( --blue);
+    background-color: var(--blue);
 }
 .menuItem span::before {
     content: "";
@@ -108,9 +102,7 @@
     cursor: pointer;
     text-align: center;
     display: flex;
-    align-items:center;
-   
-  
+    align-items: center;
 }
 .menuList:hover {
     color: hsl(207, 100%, 64%);
@@ -123,7 +115,7 @@
     .menuItem span,
     .menuItem span::after,
     .menuItem span::before {
-        background-color: var( --blue);
+        background-color: var(--blue);
     }
 }
 
@@ -141,18 +133,18 @@
     .menuItem span,
     .menuItem span::after,
     .menuItem span::before {
-        background-color: var( --blue);
+        background-color: var(--blue);
     }
 }
-@media( max-width: 629px){
-    .menuOpen{
+@media (max-width: 629px) {
+    .menuOpen {
         background: #ffffff;
-    width: 60vw;
+        width: 60vw;
     }
 }
 
-@media( max-width: 529px){
-    .menuOpen{
-    width: 55vw;
+@media (max-width: 529px) {
+    .menuOpen {
+        width: 55vw;
     }
 }

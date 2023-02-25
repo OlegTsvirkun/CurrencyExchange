@@ -2,21 +2,17 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     margin-left: 15px;
-
     font-weight: 600;
-
 }
-.item{
-margin: 2px;
+.item {
+    margin: 2px;
 }
-.itemLi{
+.itemLi {
     width: 150px;
 }
 @media (max-width: 565px) {
-
-.currencies {
-    align-items: center;
-}
+    .currencies {
+        align-items: center;
+    }
 }

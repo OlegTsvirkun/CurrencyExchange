@@ -5,7 +5,7 @@ import { Converter } from "../Converter";
 import styles from "./Calculator.module.scss";
 
 export const Calculator = () => {
-	const { currencies, isLoading } = useSelector((state) => state.currency);
+	const { currencies } = useSelector((state) => state.currency);
 
 	const [giveValue, setGiveValue] = useState(100.0);
 	const [getValue, setGetValue] = useState(0.0);

@@ -1,6 +1,3 @@
-.modalWindow{
-    
-}
 .window {
     position: fixed;
     top: 0;
@@ -10,8 +7,6 @@
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     grid-template-rows: 1fr auto 1fr;
-    // grid-template-columns: repeat(3, 1fr);
-    // grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     z-index: 20;
@@ -29,8 +24,6 @@
 .itemWindow {
     border: 1px solid rgba(71, 71, 71, 0.4);
     min-width: 400px;
-    // width: 80vw;
-    // height: 90vh;
     background-color: white;
     grid-area: 2 / 2 / 3 / 3;
     padding: 0 0px 10px;
@@ -44,7 +37,6 @@
         align-items: center;
         text-align: center;
         width: 100%;
-        // outline: 1.5px solid rgba(71, 71, 71, 0.4);
         span:hover {
             scale: 1.2;
         }
@@ -62,8 +54,6 @@
 .message {
     margin: 20px 0;
     text-align: center;
-    //     display: flex;
-    //   align-self:center;
 }
 .btnContainer {
     padding: 0 40px 10px;
@@ -72,20 +62,14 @@
     flex: 1 1 10%;
 }
 .contentContainer {
-    // margin-bottom: 80%;
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
-    // align-items:center;
     overflow: hidden;
     text-align: center;
-
-    // position: relative;
 }
 .children {
     flex: 1 1 80%;
     font-size: 18px;
-
 }
 .btn {
     margin: 10px 5px 5px 5px;
@@ -94,17 +78,10 @@
     border-radius: 3px;
     margin: 5px 10px;
     padding: 5px 7px;
-    background-color:var( --blue);
-    transition: all .2s;
+    background-color: var(--blue);
+    transition: all 0.2s;
     color: white;
 }
-
-// @media (max-width: 999px) {
-// }
-// @media (max-width: 759px) {
-// }
-// @media (max-width: 565px) {
-// }
 @media (max-width: 450px) {
     .window {
         display: flex;
@@ -114,7 +91,6 @@
     }
     .itemWindow {
         width: 100vw;
-        // height: 70vh;
     }
     .title {
         font-size: 20px;
@@ -129,6 +105,5 @@
     .children {
         flex: 1 1 80%;
         font-size: 26px;
-    
     }
 }

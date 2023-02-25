@@ -1,13 +1,10 @@
 .currenciesRate {
- 
-    // margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
-    // opacity: 0.2;
     z-index: -1;
-    :nth-child(1){
+    :nth-child(1) {
         text-align: center;
     }
     th,
@@ -18,33 +15,28 @@
     }
 }
 
-.bcg{
+.bcg {
     position: absolute;
-    background: linear-gradient(to right, #e0d500 0%,#0893d3 99%);
+    background: linear-gradient(to right, #e0d500 0%, #0893d3 99%);
     width: 100%;
     height: 100%;
     opacity: 0.1;
     z-index: -1;
 }
-.currencies{
-    color:rgb(61, 61, 61);
+.currencies {
+    color: rgb(61, 61, 61);
     padding: 30px 20px 0;
-    margin:0 auto;
+    margin: 0 auto;
     width: 70%;
-
 }
 .item {
     width: 70%;
     padding: 30px 0;
 }
 .title {
-    // padding: 0 20px;
     margin-bottom: 5px;
-    // font-size: 18px;
-    // font-weight: 600;
 }
 .description {
-    // padding:0 20px;
     margin-bottom: 15px;
     font-size: 16px;
 }
@@ -53,50 +45,43 @@
     .container {
         max-width: none;
     }
-   
 }
 
-
 @media (max-width: 700px) {
-    .currencies{
-    margin:0 auto;
-
-        // padding: 10px 20px;
-        width:100%;
+    .currencies {
+        margin: 0 auto;
+        width: 100%;
     }
-    .item{
-
-margin: 0 auto;
+    .item {
+        margin: 0 auto;
     }
 }
 @media (max-width: 565px) {
     .currenciesRate {
-       
         text-align: center;
     }
     .table__currency {
         display: none;
     }
-    .currencies{
+    .currencies {
         padding: 10px 20px;
-        width:100%;
+        width: 100%;
     }
-    .item{
-        width:100%;
-
+    .item {
+        width: 100%;
     }
 }
 @media (max-width: 450px) {
-
     .currenciesRate {
         padding: 0 10px;
         margin-top: 10px;
         text-align: center;
-        th:nth-child(4),td:nth-child(4){
-display: none;
+        th:nth-child(4),
+        td:nth-child(4) {
+            display: none;
         }
     }
-    
+
     .currenciesRate th,
     .currenciesRate td {
         text-align: start;

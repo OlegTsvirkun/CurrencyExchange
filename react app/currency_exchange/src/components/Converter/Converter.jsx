@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useRef } from "react";
+import { useSelector } from "react-redux";
 
 import styles from "./Converter.module.scss";
 
@@ -18,7 +18,7 @@ export const Converter = ({
 	slctName,
 	setCurList,
 }) => {
-	const { currencies, isLoading } = useSelector((state) => state.currency);
+	const { isLoading } = useSelector((state) => state.currency);
 
 	const isUAH = useRef(false);
 	const input = useRef();
