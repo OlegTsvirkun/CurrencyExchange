@@ -1,11 +1,14 @@
-import React from 'react';
-import { ContentWrapper } from '../../components/ContentWrapper/ContentWrapper';
-import styles from './Contacts.module.scss';
+import React from "react";
+import { ContentWrapper } from "../../components/ContentWrapper/ContentWrapper";
+import { Location } from "../../components/Location/Location";
+import { ContactsContent } from "../../components/ContactsContent/ContactsContent";
+import styles from "./Contacts.module.scss";
 
-export const Contacts = ({}) =>{
-  return (
-  <ContentWrapper className={styles.contacts}>
-    Сторінка у розробці
-  </ContentWrapper>
-)};
-
+export const Contacts = ({}) => {
+	return (
+		<ContentWrapper className={styles.contacts}>
+			<ContactsContent />
+			<Location />
+		</ContentWrapper>
+	);
+};
