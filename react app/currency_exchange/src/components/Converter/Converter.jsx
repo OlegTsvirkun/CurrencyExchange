@@ -22,6 +22,10 @@ export const Converter = ({
 
 	const isUAH = useRef(false);
 	const input = useRef();
+	const resetValue=()=>{
+		setValue("")
+		input.current.focus()
+	}
 	if (isLoading) return <>Loading..</>;
 	return (
 		<div className={styles.Converter + " " + styles.block + " " + className}>
@@ -37,7 +41,7 @@ export const Converter = ({
 						type="number"
 					/>
 					{input.current?.value && (
-						<span className={styles.reset} onClick={()=>setValue("")}>&#10005;</span>
+						<span className={styles.reset} onClick={resetValue}>&#10005;</span>
 					)}
 				</div>
 				<select
