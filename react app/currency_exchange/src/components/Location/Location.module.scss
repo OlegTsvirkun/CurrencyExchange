@@ -1,6 +1,18 @@
 .location{
     margin: 0 20px;
+    h3{
+        margin: 0 0 20px  ;
+    }
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
 }
 .map{
-    width: 50%;
+    width: 80%;
+}
+@media( max-width: 899px){
+    .map{
+        width: 80%;
+    }   
 }

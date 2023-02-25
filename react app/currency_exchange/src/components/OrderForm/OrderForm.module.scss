@@ -31,11 +31,29 @@
 }
 .button{
     border: rgba(40, 42, 185);
+    padding: 7px 10px;
+
     text-align: center;
     margin: 10px auto;
     width: 70%;
-
+font-size: 18px;
     background-color:var( --blue);
     transition: all .2s;
     color: white;
+}
+@media( max-width: 769px){
+    .form{
+        width: 60%;
+    }
+}
+@media( max-width: 560px){
+    .form{
+        width: 80%;
+    }
+
+}
+@media( max-width: 490px){
+    .form{
+        width: 90%;
+    }
 }

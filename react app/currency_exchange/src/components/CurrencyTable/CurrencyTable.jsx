@@ -24,9 +24,11 @@ else if(!isLoading){
 
   return(
    <div className={styles.currenciesRate}>
-     <div className={styles.currenciesRate}>
-                <div className={styles.title}>Курс валют</div>
-                <div className={styles.description}>Тут ви можете отримати усю інформацію з операцій по валюті
+     <div className={styles.currencies}>
+                <div>
+                  <h2 className={styles.title}>Курс валют</h2>
+                  <div className={styles.description}>Тут ви можете отримати усю інформацію з операцій по валюті
+                  </div>
                 </div>
 
                 <table className={styles.item}>
@@ -45,6 +47,8 @@ else if(!isLoading){
                     </tbody>
                 </table>
             </div>
+    <div className={styles.bcg}></div>
+
   </div>
 )
                     }

@@ -144,3 +144,15 @@
         background-color: var( --blue);
     }
 }
+@media( max-width: 629px){
+    .menuOpen{
+        background: #ffffff;
+    width: 60vw;
+    }
+}
+
+@media( max-width: 529px){
+    .menuOpen{
+    width: 55vw;
+    }
+}

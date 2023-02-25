@@ -13,9 +13,9 @@ export const HomePage = ({}) => {
 		<div className={styles.homePage}>
 			<ContentWrapper >
 				<CurrencyTable />
+				{!isLoading && <Calculator />}
 			</ContentWrapper>
 			<div className={styles.container}>
-				{!isLoading && <Calculator />}
 			</div>
 		</div>
 	);

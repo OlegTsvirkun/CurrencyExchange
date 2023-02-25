@@ -27,19 +27,19 @@ overflow: hidden;
     }
 }
 @media (max-width: 759px) {
-    .header__item {
+    .item {
         grid-template-columns: 3fr 8fr 1.5fr;
     }
 }
 
 @media (max-width: 565px) {
-    .header__item {
+    .item {
         grid-template-columns: 3fr 6fr 2fr;
     }
 }
 
 @media (max-width: 450px) {
-    .header__item {
+    .item {
         grid-template-columns: 3fr 6fr 2fr;
     }
 }

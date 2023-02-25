@@ -104,7 +104,9 @@ export const Calculator = () => {
 		}
 	};
 	return (
+
 		<div className={styles.calculator}>
+			<div className={styles.bcg}></div>
 			<form className={styles.block} onChange={(e) => handleForm(e)}>
 				{
 					<>

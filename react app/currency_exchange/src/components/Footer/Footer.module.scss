@@ -2,7 +2,7 @@
 .footer {
     display: flex;
     justify-content:space-around;
-    margin-top: 30px;
+    // margin-top: 30px;
     height: 80px;
     background-color: rgb(39, 39, 39);
     color: azure;
@@ -35,4 +35,30 @@
 }
 .logo {
 width: 50px;
+}
+
+@media( max-width: 529px){
+    .footer {
+        padding: 20px 10px;
+        height: 150px;
+    }
+}
+
+@media( max-width: 529px){
+    .block{
+        display: grid;
+grid-template-columns: repeat(2,1fr);
+grid-template-rows: repeat(2,1fr);
+:nth-child(1){
+    grid-area: 1/1/1/1;
+}
+:nth-child(2){
+    grid-area: 2/1/2/1;
+}
+.contacts{
+    margin: 0;
+
+}
+    }
+
 }
