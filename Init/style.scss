@@ -1,0 +1,482 @@
+body {
+    // overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; // Yeah, yeah everybody write about it
+}
+
+input[type="number"],
+input[type="number"]:hover,
+input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+.header {
+    height: 80px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    z-index: 10;
+
+    &__item {
+        display: grid;
+        grid-template-columns: 3fr 8fr 1fr;
+    }
+}
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+.logo {
+    position: relative;
+    &__title {
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        text-align: center;
+        // transform: translateY(60%);
+        transform: translate(-50%, -50%);
+        font-size: 35px;
+        text-transform: uppercase;
+        color: rgb(255, 255, 255);
+        text-shadow: 1px 1px 2px rgb(110, 110, 110);
+
+        // font-border: 1px solid black;
+    }
+    &__flag {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    &__blue {
+        height: 40px;
+        background-color: var( --blue);
+    }
+    &__yellow {
+        height: 40px;
+        background-color: #fff374;
+    }
+}
+main {
+    margin-top: 100px;
+}
+.currencies {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-left: 15px;
+
+    font-weight: 600;
+    &__item {
+    }
+    &__dollar {
+        margin-bottom: 10px;
+    }
+    &__euro {
+    }
+}
+
+.menu {
+    padding: 0 10px;
+    background-color: #fff374;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    color: var( --blue);
+    cursor: pointer;
+    // overflow: hidden;
+    position: relative;
+    &__helper {
+        position: sticky;
+        background-color: #fff374;
+
+        height: 80px;
+        position: fixed;
+        z-index: 12;
+        top: 0;
+    }
+    &__list {
+        position: absolute;
+        // right: 100%; //!
+        display: flex;
+        align-items: center;
+        // transform: translateX(50%);
+        // background-color: #015aff;
+        transform: translateX(100%);
+        right: -100%;
+        height: 80px;
+        transition: 0.3s;
+        // display: none;
+        z-index: 11;
+    }
+    &__item {
+        display: flex; /* используем flex для центрирования содержимого */
+        align-items: center; /* центрируем содержимое кнопки */
+        justify-content: center;
+
+        transform: translateY(0%);
+
+        width: 35px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 13;
+        transition: all 0.3s;
+    }
+    &__title {
+        transform: translateY(-350%);
+        display: block;
+        // display: none;
+        transition: all 0.8s;
+        // position: relative;
+        // transform: translateY(0);
+    }
+    &__item span,
+    &__item span::before,
+    &__item span::after {
+        // display: block;
+        // display: none;
+        position: absolute;
+
+        // bottom:-200%;
+        width: 100%;
+        height: 4px;
+        //   background-color: transparent;
+        background-color: var( --blue);
+    }
+    &__item span::before {
+        content: "";
+        top: -10px;
+    }
+    &__item span::after {
+        content: "";
+        top: 10px;
+    }
+
+    &__item:hover {
+        span,
+        span::after,
+        span::before {
+            background-color: #015aff;
+        }
+    }
+}
+.hide {
+    transform: translateY(250%);
+}
+
+.menu-open {
+    transform: translateX(0%);
+    right: 100%;
+}
+.menu-click {
+    span {
+        height: 0;
+        transform: rotate(45deg);
+    }
+    span::before,
+    span::after {
+        top: 0;
+    }
+    span::before {
+        transform: rotate(90deg);
+    }
+}
+.menu-list {
+    &__item {
+        padding: 0 20px;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+    &__item:hover {
+        color: hsl(207, 100%, 64%);
+    }
+}
+.menu:hover {
+    .menu__item {
+        transform: translateY(0);
+    }
+    .menu__item span,
+    .menu__item span::after,
+    .menu__item span::before {
+        background-color: var( --blue);
+    }
+}
+
+.menu-hover {
+    transform: translateY(0);
+}
+.currencies-rate {
+    padding: 0 20px; 
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__item {
+        padding: 30px 0;
+    }
+    th,
+    td {
+        text-align: start;
+        font-size: 18px;
+        padding: 5px 15px;
+    }
+    &__title {
+        // padding: 0 20px;
+        margin-bottom: 5px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    &__description {
+        // padding:0 20px;
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+}
+.calculator {
+    background-color: rgb(245, 245, 245);
+    height: 350px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &__block {
+        display: flex;
+        width: 100%;
+        position: absolute;
+        bottom: 50%;
+        transform: translateY(50%);
+    }
+}
+
+.give-block {
+    height: 250px;
+    background-color: var( --blue);
+}
+.give-block,
+.get-block {
+    flex: 1 0 50%;
+    padding: 10px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    // border:1px solid rgb(46, 46, 46);
+    // border-radius: 3px;
+}
+.give-title,
+.get-title {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 1px rgb(113, 113, 113);
+}
+.give {
+    &__inputs {
+        text-align: center;
+    }
+    &__value {
+        font-size: 24px;
+        padding: 7px;
+        background-color: transparent;
+        border: 1px solid rgb(46, 46, 46);
+        border-radius: 3px;
+        color: rgb(255, 255, 255);
+        text-shadow: 1px 1px 2px rgb(110, 110, 110);
+    }
+    &__currency {
+        font-size: 24px;
+        padding: 7px;
+        background-color: transparent;
+        border: 1px solid #000;
+        border-radius: 3px;
+        // font-weight: 300;
+        color: rgb(240, 240, 240);
+        text-shadow: 1px 1px 1px rgb(110, 110, 110);
+        option {
+            background-color: var( --blue);
+        }
+    }
+}
+.get-block {
+    height: 250px;
+    background-color: transparent;
+    // flex: 0 1 50%;
+}
+.get-title {
+    color: rgb(68, 68, 68);
+    font-weight: 600;
+    text-shadow: none;
+}
+.get {
+    &__inputs {
+        text-align: center;
+    }
+    &__value {
+        font-size: 24px;
+        font-weight: 600;
+        padding: 7px;
+        background-color: transparent;
+        border: 1px solid rgb(46, 46, 46);
+        border-radius: 3px;
+        color: rgb(68, 68, 68);
+        // text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    }
+    &__currency {
+        font-size: 24px;
+        padding: 7px;
+        background-color: transparent;
+        border: 1px solid #000;
+        border-radius: 3px;
+        // font-weight: 300;
+        color: rgb(68, 68, 68);
+        option {
+            background-color: rgb(245, 245, 245);
+            border-radius: 3px;
+        }
+
+        // text-shadow: 1px 1px 1px rgb(110, 110, 110);
+    }
+}
+.calculator {
+    input,
+    select {
+        margin-top: 7px;
+    }
+}
+.footer {
+    display: flex;
+    margin-top: 30px;
+    height: 20%; 
+    background-color: rgb(39, 39, 39);
+    color: azure;
+    padding: 15px 20px;
+    justify-content: space-between;
+    &__logo {
+    }
+    &__contacts {
+    }
+}
+
+@media (max-width: 999px) {
+    .container {
+        max-width: none;
+    }
+    .calculator {
+        input,
+        select {
+            font-size: 20px;
+        }
+    }
+}
+@media (max-width: 759px) {
+    .logo__title {
+        font-size: 28px;
+    }
+    .menu__item {
+        transform: translateY(0);
+    }
+    .menu__item span,
+    .menu__item span::after,
+    .menu__item span::before {
+        background-color: var( --blue);
+    }
+    .header__item {
+        grid-template-columns: 3fr 8fr 1.5fr;
+    }
+}
+@media (max-width: 669px) {
+    .calculator {
+        input,
+        select {
+            font-size: 28px;
+        }
+    }
+    .give-title,
+    .get-title {
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .give-block,
+    .get-block {
+        // flex: 1 1 50%;
+        width: 100%;
+        padding: 10px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+    .calculator__block {
+        flex-direction: column;
+        align-items: center;
+        position: inherit;
+        height: 100%;
+    }
+}
+@media (max-width: 565px) {
+    .calculator {
+        input,
+        select {
+            width: 80%;
+            text-align: center;
+        }
+    }
+    .header__item {
+        grid-template-columns: 3fr 6fr 2fr;
+    }
+    .logo__title {
+        font-size: 22px;
+    }
+    .header__item {
+        // display: flex;
+        // justify-content: space-between;
+    }
+    .currencies {
+        align-items: center;
+        // font-size: 18px;
+    }
+    .table__currency {
+        display: none;
+    }
+}
+@media (max-width: 450px) {
+    .logo__title {
+        font-size: 18px;
+    }
+    .header__item {
+        grid-template-columns: 3fr 6fr 2fr;
+    }
+    .calculator {
+        input,
+        select {
+            font-size: 18px;
+            width: 80%;
+            text-align: center;
+        }
+    }
+    .currencies-rate {
+        padding: 0 10px;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .currencies-rate th,
+    .currencies-rate td {
+        text-align: start;
+        font-size: 18px;
+        padding: 5px 7px;
+    }
+    .currencies-rate__item {
+        padding: 10px 0;
+    }
+}
